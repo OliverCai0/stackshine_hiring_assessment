@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_044838) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_20_035140) do
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "vendor_transactions", force: :cascade do |t|
     t.integer "workspace_vendor_id", null: false
     t.string "description"
@@ -29,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_044838) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
     t.index ["workspace_id"], name: "index_workspace_members_on_workspace_id"
   end
 
@@ -49,6 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_044838) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_workspaces_on_slug", unique: true
   end
 
   add_foreign_key "vendor_transactions", "workspace_vendors"

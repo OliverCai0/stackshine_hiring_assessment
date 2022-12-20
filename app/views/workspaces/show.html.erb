@@ -1,0 +1,17 @@
+<div>
+    <h1>
+        <%= @workspace.name%>
+    </h1>
+    <h1>
+        <%= @workspace.domain%>
+    </h1>
+    <h1>
+        <%= link_to "Workspace Vendors", workspace_workspace_vendors_path(@workspace.code) %>
+    </h1>
+
+    <h1>
+        <%= link_to "Workspace Members", workspace_workspace_members_path(@workspace.code) %>
+    </h1>
+
+    <%= button_to "Sign Out", session_path, :method => "delete"  %>
+</div>
