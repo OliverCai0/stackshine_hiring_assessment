@@ -1,0 +1,10 @@
+<div>
+    <% if local_assigns[:link] %>
+        <%= link_to workspace_vendor.name, workspace_workspace_vendor_path(id: workspace_vendor.id)%>
+        <%= workspace_vendor.description %>
+    <% else %>
+        <%= workspace_vendor.name %>
+        <%= workspace_vendor.description %>
+        <%= render partial: "shared/vendor_transaction", collection: @workspace_vendor.vendor_transactions%>
+    <% end %>
+</div>

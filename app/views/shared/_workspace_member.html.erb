@@ -1,0 +1,11 @@
+<div>
+    <% if local_assigns[:link] %>
+        <%= link_to workspace_member.first_name + " " + workspace_member.last_name, workspace_workspace_member_path(id: workspace_member.id)%>
+        <%= workspace_member.email %>
+    <% else %>
+        <%= workspace_member.first_name %>
+        <%= workspace_member.last_name %>
+        <%= workspace_member.email %>
+        <%= workspace_member.created_at %>
+    <% end %>
+</div>

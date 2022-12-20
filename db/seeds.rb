@@ -81,13 +81,15 @@ people = [
 ]
 
 people.each do |person|
-  WorkspaceMember.find_or_create_by(
+  person = WorkspaceMember.find_or_create_by(
     workspace: workspace,
     first_name: person[:name].split(" ").first,
     last_name: person[:name].split(" ").last,
     email: "#{person[:name].gsub(/\s+/, "").downcase}@#{workspace.domain}",
     title: person[:title],
   )
+  person.password = '1234'
+  person.save
 end
 
 VendorTransaction.find_or_create_by!(
