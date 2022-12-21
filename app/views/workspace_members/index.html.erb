@@ -1,1 +1,11 @@
-<%= render partial: "shared/workspace_member", collection: @workspace_members, locals: {link: true} %>
+<div class="flex flex-col  md:container md:mx-auto p-2">
+    <div class="grid grid-cols-2 p-0.5 font-bold text-lg">
+        <div class="flex justify-center ">
+            Name
+        </div>
+        <div class="flex justify-center">
+            Email
+        </div>
+    </div>
+    <%= render partial: "shared/workspace_member", collection: @workspace_members, locals: {link: true} %>
+</div>

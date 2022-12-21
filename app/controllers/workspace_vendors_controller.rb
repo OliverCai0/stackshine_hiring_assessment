@@ -6,6 +6,7 @@ class WorkspaceVendorsController < ApplicationController
     end
 
     def show
-        @workspace_vendor = WorkspaceVendor.find_by(params[:id])
+        puts params[:id]
+        @workspace_vendor = WorkspaceVendor.find(params[:id])
     end
 end

@@ -1,5 +1,8 @@
-<div>
-    <%= vendor_transaction.description %>
-    <%= vendor_transaction.amount_in_cents%>
-    <%= vendor_transaction.transaction_date%>
+<div class="grid grid-cols-2">
+    <div class="flex justify-center">
+        <%= "$" + (vendor_transaction.amount_in_cents % 100).to_s + "." + (vendor_transaction.amount_in_cents / 100).to_i.to_s%>
+    </div>
+    <div class="flex justify-center">
+        <%= vendor_transaction.transaction_date%>
+    </div>
 </div>
