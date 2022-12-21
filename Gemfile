@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+# Health check
+gem 'aws-healthcheck'
+
 # Adding this to encrypt the number of workspaces
 gem 'friendly_id', '~> 5.4.0'
 
