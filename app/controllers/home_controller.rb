@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def landing
     if current_user
-      redirect_to workspace_url(id: current_user.workspace.code)
+      redirect_to workspace_url(id: current_user.workspace.slug)
     end
   end
 end
