@@ -1,10 +1,28 @@
-<div>
+<div class="flex flex-col  md:container md:mx-auto p-2">
     <% if local_assigns[:link] %>
-        <%= link_to workspace_vendor.name, workspace_workspace_vendor_path(id: workspace_vendor.id)%>
-        <%= workspace_vendor.description %>
+        <div>
+            <%= link_to workspace_vendor.name, workspace_workspace_vendor_path(id: workspace_vendor.id), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline"%>
+        </div>
+        <div>
+            <%= workspace_vendor.description %>
+        </div>
     <% else %>
-        <%= workspace_vendor.name %>
-        <%= workspace_vendor.description %>
-        <%= render partial: "shared/vendor_transaction", collection: @workspace_vendor.vendor_transactions%>
+        <div class="md:container md:mx-auto p-2 font-bold text-lg">
+            <%= workspace_vendor.name %>
+        </div>
+        <div class="md:container md:mx-auto p-2">
+            <%= workspace_vendor.description %>
+        </div>
+        <div class="md:container md:mx-auto p-2">
+            <div class="grid grid-cols-2">
+                <div class="flex justify-center">
+                    <strong>Price</strong>
+                </div>
+                <div class="flex justify-center">
+                    <strong>Date of Transaction</strong>
+                </div>
+            </div>
+            <%= render partial: "shared/vendor_transaction", collection: @workspace_vendor.vendor_transactions%>
+        </div>
     <% end %>
 </div>

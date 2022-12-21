@@ -10,6 +10,9 @@
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   </head>
   <body class="bg-slate-100">
+    <%= link_to root_path do %>
+      <%= image_tag "https://www.stackshine.com/images/full_logo.svg", class: "w-auto h-9 mx-auto mb-5"%>
+    <% end %>
     <%= yield %>
   </body>
 </html>

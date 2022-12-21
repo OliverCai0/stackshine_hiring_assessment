@@ -6,6 +6,6 @@ class WorkspaceMembersController < ApplicationController
     end
 
     def show
-        @workspace_member = WorkspaceMember.find_by(params[:id])
+        @workspace_member = WorkspaceMember.find(params[:id])
     end
 end
