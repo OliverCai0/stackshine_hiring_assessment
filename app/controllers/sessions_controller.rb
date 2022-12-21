@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     member = WorkspaceMember.find_by(email: member_params[:email])
     if member&.authenticate(member_params[:password])
       session[:user_id] = member.id
-      redirect_to workspace_url(id: member.workspace.code)
+      redirect_to workspace_url(id: member.workspace.slug)
     else
       redirect_to root_path, :notice => "Invalid email or incorrect password"
     end
